@@ -1,1 +1,31 @@
-<p>buttons works!</p>
+<div class="container1">
+<mat-button-toggle #buttonToggle checked>Toggle</mat-button-toggle>
+  {{buttonToggle.checked}}
+
+
+  <p>
+    Default appearance: <br>
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" #toggleGroup="matButtonToggleGroup" multiple>
+      <mat-button-toggle value="bold">Bold</mat-button-toggle>
+      <mat-button-toggle value="italic">Italic</mat-button-toggle>
+      <mat-button-toggle value="underline">Underline</mat-button-toggle>
+    </mat-button-toggle-group>
+    {{toggleGroup.value}}
+  </p>
+</div>
+
+<div class="container1">
+  <span matBadge="5">Notification</span>
+  <br><br><br>
+  <span matBadge="5" matBadgePosition="below before">Notification</span>
+  <br><br><br>
+  <span matBadge="5" matBadgePosition="below after">Notification</span>
+  <br><br><br>
+  <span matBadge="5" matBadgePosition="above before">Notification</span>
+  <br><br><br>
+  <span matBadge="5" matBadgeSize="small" matBadgeColor="primary">Notification</span>
+  <br><br><br>
+  <span matBadge="5" matBadgeSize="medium" matBadgeColor="accent">Notification</span>
+  <br><br><br>
+  <span [matBadge]="notification" [matBadgeHidden]="notification === 0" matBadgeSize="large" matBadgeColor="warn" matBadgeOverlap="false">Notification</span>
+</div>
