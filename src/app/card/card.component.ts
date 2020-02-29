@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
+  people = {
+    1: {
+      name: 'Sergey',
+      secondName: 'Minaev'
+    }
+  };
+
+
   constructor() { }
 
   ngOnInit(): void {

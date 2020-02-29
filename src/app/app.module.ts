@@ -14,6 +14,10 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import {MatListModule} from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatInputModule} from '@angular/material/input';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { LiveSearchComponent } from './live-search/live-search.component';
+import { PCardComponent } from './p-card/p-card.component';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,9 @@ import {MatInputModule} from '@angular/material/input';
     CardComponent,
     NavigationComponent,
     ButtonsComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    LiveSearchComponent,
+    PCardComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,10 @@ import {MatInputModule} from '@angular/material/input';
     MatButtonToggleModule,
     MatListModule,
     MatExpansionModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

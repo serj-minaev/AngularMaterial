@@ -1,0 +1,27 @@
+<div class="container">
+ <h1>{{ title }}</h1>
+</div>
+<div class="container column">
+  <mat-form-field class="example-full-width">
+    <mat-label>Select product</mat-label>
+    <input matInput
+       placeholder="Select product"
+       value=""
+       name="search" [(ngModel)]
+       ="search"
+       autocomplete="off"
+    >
+
+  </mat-form-field>
+<!--  <button mat-button [(ngModel)]="searchA" value="apple">apple</button>-->
+
+</div>
+<div class="container">
+  <div class="card" *ngFor="let product of products | filter:search | filter:searchA" >
+    <p>{{product.id}}</p>
+    <p>{{product.name}}</p>
+    <p>{{product.manufacturer}}</p>
+    <p>{{product.price}}</p>
+  </div>
+</div>
+

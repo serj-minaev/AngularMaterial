@@ -4,7 +4,6 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
@@ -14,23 +13,23 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatInputModule} from '@angular/material/input';
 
 const MaterialComponents = [
   MatButtonModule,
   MatToolbarModule,
   MatCardModule,
   MatIconModule,
-  FormsModule,
   MatSidenavModule,
   MatCheckboxModule,
-  ReactiveFormsModule,
   MatRadioModule,
   MatMenuModule,
   MatBadgeModule,
   MatProgressSpinnerModule,
   MatGridListModule,
   MatTabsModule,
-  MatAutocompleteModule
+  MatAutocompleteModule,
+  MatInputModule
 ]
 
 @NgModule({

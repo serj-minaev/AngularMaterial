@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
 
 @Component({
   selector: 'app-main',
@@ -7,16 +9,29 @@ import {FormControl} from '@angular/forms';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  events: string[] = [];
-  opened: boolean;
-  mode = new FormControl('over');
-  shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
+
+  myControl = new FormControl();
+  filteredOptions: Observable<string[]>;
 
   options: string[] = ['Angular', 'React', 'Vue'];
 
-  constructor() { }
+  ngOnInit() {
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value))
+    );
 
-  ngOnInit(): void {
+
   }
 
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+    return this.options.filter(option =>
+      option.toLowerCase().includes(filterValue)
+    );
+  }
+
+  displayFn(subject) {
+    return subject ? subject.name : undefined;
+  }
 }
